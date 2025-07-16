@@ -22,6 +22,17 @@ A simple real-time chat application built using Angular and a basic REST API bac
 - **Transport**: HTTP (polling every 2 seconds)
 
 ---
+Step 1: Download Kafka
+Go to the official Kafka download page:
+👉 https://kafka.apache.org/downloads
+
+Choose the latest binary version (e.g., Kafka 3.6.1 for Scala 2.13)
+and extract it to your preferred folder.
+✅ Step 2: Start Zookeeper & Kafka Broker
+Kafka requires Zookeeper. Open 2 terminals in the Kafka directory and run:
+create chat topic in new terminal & produce and consume the messages.
+
+
 
 
 
