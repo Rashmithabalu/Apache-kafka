@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat App</title>
+</head>
+<body>
+
+  <div class="chat-container">
+    <div class="chat-header">
+        <div class="user-label">
+          <span> {{ currentUser }}</span>
+        </div>
+      </div>
+    <div class="chat-box" #chatBox>
+      <div *ngFor="let msg of messages" 
+           [ngClass]="{'my-message': msg.mine, 'other-message': !msg.mine}" 
+           class="message">
+        <span>{{ msg.content }}</span>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input 
+        [(ngModel)]="message" 
+        placeholder="Type a message..." 
+        (keyup.enter)="sendMessage()" 
+        [disabled]="isSending"
+      />
+      <button (click)="sendMessage()" [disabled]="isSending">
+        <span *ngIf="!isSending">➤</span>
+        <span *ngIf="isSending" class="spinner"></span>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
